@@ -1,4 +1,4 @@
-# Contributors guidelines to Samoses
+# Contributors guidelines to complang
 
 ## Getting Started
 
