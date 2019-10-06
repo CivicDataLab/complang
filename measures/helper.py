@@ -1,12 +1,13 @@
+from typing import List
 import numpy as np
 
 
-def _sttr_ci(results):
+def _sttr_ci(results: List[int]) -> np.float64:
     """calculate the confidence interval for sttr """
     return 1.96 * np.std(results) / np.sqrt(len(results))
 
 
-def preprocess(tokens, fs=False):
+def preprocess(tokens: List[str], fs: bool=False) -> float:
     """Return text length, vocabulary size and optionally the frequency
     spectrum.
 
@@ -22,7 +23,7 @@ def preprocess(tokens, fs=False):
     return text_length, vocabulary_size
 
 
-def bootstrap(tokens, measure='type_token_ratio', window_size=3, ci=False, raw=False):
+def bootstrap(tokens: List[str], measure: str='type_token_ratio', window_size: int=3, ci: bool=False, raw: bool=False) -> np.float64:
     """calculate bootstrap for lex diversity measures
     as explained in Evert et al. 2017. if measure='type_token_ratio' it calculates
     standardized type-token ratio
