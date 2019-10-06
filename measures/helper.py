@@ -23,7 +23,7 @@ def preprocess(tokens: List[str], fs: bool=False) -> float:
     return text_length, vocabulary_size
 
 
-def bootstrap(tokens: List[str], measure: str='type_token_ratio', window_size: int=3, ci: bool=False, raw: bool=False) -> np.float64:
+def bootstrap(tokens: List[str], measure: str='type_token_ratio', window_size: int = 3, ci: bool = False, raw: bool = False) -> np.float64:
     """calculate bootstrap for lex diversity measures
     as explained in Evert et al. 2017. if measure='type_token_ratio' it calculates
     standardized type-token ratio
