@@ -1,9 +1,9 @@
 import numpy as np
 from utils import _average_statistic
 
-"""
-TODO: add type hinting
-"""
+# TODO: add type hinting
+
+
 def average_punctuation_per_sentence(sentence_graphs):
     return _average_statistic(punctuation_per_sentence, sentence_graphs)
 
