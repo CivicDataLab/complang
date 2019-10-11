@@ -1,5 +1,5 @@
 import numpy as np
-import scipy
+import scipy.stats
 
 
 def sichel_s(vocab_size, freq_spectrum):
