@@ -18,7 +18,9 @@ def closeness_centrality(g):
     """
     if len(g) > 1:
         root = [v for v, l in g.nodes(data=True) if "root" in l][0]
-        return networkx.algorithms.centrality.closeness_centrality(g, root, reverse=True)
+        return networkx.algorithms.centrality.closeness_centrality(
+            g, root, reverse=True
+        )
     else:
         return 1
 
@@ -41,7 +43,9 @@ def outdegree_centralization(g):
         max_out_degree = max(out_degrees)
         # for directed graphs, the denominator should be n² - 2n + 1
         # instead of n² - 3n + 2
-        centr = sum(max_out_degree - deg for deg in out_degrees) / (len(g) ** 2 - 2 * len(g) + 1)
+        centr = sum(max_out_degree - deg for deg in out_degrees) / (
+            len(g) ** 2 - 2 * len(g) + 1
+        )
         assert centr <= 1
         return centr
     else:
@@ -62,7 +66,9 @@ def closeness_centralization(g):
     dependent on the root vertex. Used by Oya (2012).
     """
     if len(g) > 1:
-        cc = networkx.algorithms.centrality.closeness_centrality(g, reverse=True).values()
+        cc = networkx.algorithms.centrality.closeness_centrality(
+            g, reverse=True
+        ).values()
         max_cc = max(cc)
         # for directed graphs, the denominator should be n - 1
         # instead of (n² - 3n + 2)/(2n - 3)
