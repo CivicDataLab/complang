@@ -36,5 +36,7 @@ def get(tokens: List[str]):
     ]
     for measure in lexical:
         score, ci = bootstrap(tokens, measure=measure, window_size=3, ci=True)
+        print(score, ci)
     for wl, wl_name in zip(word_length, word_length_names):
         score, stdev = wl(tokens)
+        print(score, ci)
