@@ -3,6 +3,7 @@ from utils import _average_statistic
 
 # TODO: add type hinting
 
+
 def average_average_dependency_distance(sentence_graphs):
     """Oya (2011)"""
     return _average_statistic(average_dependency_distance, sentence_graphs)
