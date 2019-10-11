@@ -2,6 +2,7 @@ import numpy as np
 
 # TODO: add type hinting
 
+
 def mattr(tokens, window_size=1000):
     """Calculate the Moving-Average Type-Token Ratio (Covington and
     McFall, 2010).
@@ -19,7 +20,6 @@ def mattr(tokens, window_size=1000):
         window_frequencies[tokens[window_end]] += 1
         if window_frequencies[word_to_pop] == 0:
             del window_frequencies[word_to_pop]
-        # type-token ratio for the current window:
         ttr_values.append(len(window_frequencies) / window_size)
     return np.mean(ttr_values)
 
@@ -28,6 +28,7 @@ def mtld(tokens, factor_size=0.72):
     """Implementation following the description in McCarthy and Jarvis
     (2010).
     """
+
     def _mtld(tokens, factor_size, reverse=False):
         factors = 0
         factor_lengths = []
@@ -49,7 +50,7 @@ def mtld(tokens, factor_size=0.72):
             factors += (1 - ttr) / (1 - factor_size)
             factor_lengths.append(token_count)
         return len(tokens) / factors
+
     forward_mtld = _mtld(tokens, factor_size)
     reverse_mtld = _mtld(tokens, factor_size, reverse=True)
     return np.mean((forward_mtld, reverse_mtld))
-
