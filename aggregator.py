@@ -24,7 +24,7 @@ from measures.vocab_based import summer_s
 from measures.helper import _sttr_ci
 
 
-def preprocess(tokens, fs=False):
+def preprocess(tokens: List[str], fs=False):
     """Return text length, vocabulary size and optionally the frequency
     spectrum.
 
