@@ -1,5 +1,5 @@
 pyphen==0.9.5
-numpy==1.17.0
+numpy==1.17.3
 nltk==3.4.5
 nltk_tgrep==1.0.6
 networkx==2.3
